@@ -12,6 +12,8 @@ export class ListComponent implements OnInit {
   @Output() details = new EventEmitter<Person>();
 
   selectedPerson: Person = new Person();
+  status = true;
+  btnText = 'Ocultar lista';
 
   constructor() {
   }
@@ -39,5 +41,4 @@ export class ListComponent implements OnInit {
     this.data = this.data.filter(x => x !== this.selectedPerson);
     this.selectedPerson = new Person();
   }
-
 }

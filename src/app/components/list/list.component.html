@@ -22,15 +22,20 @@
             <div class="form-group">
               <input type="number" placeholder="edad" [(ngModel)]="selectedPerson.edad" class="form-control">
             </div>
-            <button (click)="addOrEdit()" class="btn btn-block btn-success">Enviar</button>
+            <button (click)="addOrEdit()" class="btn btn-block btn-success" *ngIf="!selectedPerson.id">Ingresar</button>
+            <button (click)="addOrEdit()" class="btn btn-block btn-success" *ngIf="selectedPerson.id > 0">Actualizar</button>
             <button (click)="delete()" class="btn btn-block btn-danger" *ngIf="selectedPerson.id > 0">Borrar</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="mt-4">
+      <button (click)="status=!status" class="btn btn-block btn-secondary" *ngIf="!status">Mostrar lista</button>
+      <button (click)="status=!status" class="btn btn-block btn-secondary" *ngIf="status">Ocultar lista</button>
+    </div>
   </div>
   <div class="col-md-6">
-    <div class="card">
+    <div class="card" *ngIf="status">
       <div class="card-title mt-2 text-center">
         <h3>Lista</h3>
       </div>
