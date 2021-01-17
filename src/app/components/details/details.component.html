@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-title mt-2 text-center">
+    <h3>Detalles</h3>
+  </div>
+  <div class="card-body">
+    <div class="sc" [ngClass]="{hc:status}">
+      <ul *ngIf="details" class="list-group">
+        <li class="list-group-item list-group-item-action">
+          <div class="row">
+            <div class="col">Nombre: {{details.nombre}}</div>
+          </div>
+        </li>
+        <li class="list-group-item list-group-item-action">
+          <div class="row">
+            <div class="col">Apellido: {{details.apellido}}</div>
+          </div>
+        </li>
+        <li class="list-group-item list-group-item-action">
+          <div class="row">
+            <div class="col">Sexo: {{details.sexo}}</div>
+          </div>
+        </li>
+        <li class="list-group-item list-group-item-action">
+          <div class="row">
+            <div class="col">Edad: {{details.edad}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-block btn-info" (click)="status=!status" *ngIf="status">Mostrar datos</button>
+    <button class="btn btn-block btn-info" (click)="status=!status" *ngIf="!status">Ocultar datos</button>
+  </div>
+</div>
+
