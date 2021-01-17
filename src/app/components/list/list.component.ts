@@ -35,4 +35,9 @@ export class ListComponent implements OnInit {
     this.selectedPerson = new Person();
   }
 
+  delete(): void {
+    this.data = this.data.filter(x => x !== this.selectedPerson);
+    this.selectedPerson = new Person();
+  }
+
 }

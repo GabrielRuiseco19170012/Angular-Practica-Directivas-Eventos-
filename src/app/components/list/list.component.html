@@ -22,7 +22,8 @@
             <div class="form-group">
               <input type="number" placeholder="edad" [(ngModel)]="selectedPerson.edad" class="form-control">
             </div>
-            <button (click)="addOrEdit()" class="btn btn-block btn-success">submit</button>
+            <button (click)="addOrEdit()" class="btn btn-block btn-success">Enviar</button>
+            <button (click)="delete()" class="btn btn-block btn-danger" *ngIf="selectedPerson.id > 0">Borrar</button>
           </div>
         </div>
       </div>
